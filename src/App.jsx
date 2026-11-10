@@ -8,21 +8,16 @@ function AboutColumn() {
   return (
     <section className="column intro-column" aria-labelledby="about-title">
       <div className="intro-copy">
-        <h1 id="about-title">What should we do today?</h1>
+        <h1 id="about-title">What did I do today?</h1>
         <p>
-          Daylobby is a small calendar for curious days: exhibitions, markets,
-          matinees, long walks, and whatever catches your eye along the way.
+          Daylobby is a quiet logger for a designer and developer's day:
+          sketches, commits, reviews, and everything in between.
         </p>
         <p>
-          It keeps the next good idea close without turning free time into a
-          project. Pick a window, choose one thing, and leave some room for the
-          day to surprise you.
+          Each column is one day of the week. Open an entry to see what it was,
+          where it happened, and how long it took.
         </p>
-        <p>
-          Everything here is intentionally simple, affordable, and easy to
-          begin.
-        </p>
-        <p className="credit">A small tool for making a day of it.</p>
+        <p className="credit">A small tool for looking back on a day.</p>
       </div>
     </section>
   )
@@ -94,11 +89,11 @@ function EventDialog({ event, onClose }) {
         <p className="dialog-description">{event.note}</p>
         <dl>
           <div>
-            <dt>Where</dt>
+            <dt>App</dt>
             <dd>{event.place}</dd>
           </div>
           <div>
-            <dt>Entry</dt>
+            <dt>Time spent</dt>
             <dd>{event.price}</dd>
           </div>
         </dl>
@@ -239,7 +234,7 @@ export default function App() {
       <main
         ref={scrollerRef}
         className={`calendar-scroller${dragging ? ' is-dragging' : ''}`}
-        aria-label="About, today, this week, this month, and this year. Drag or swipe to explore."
+        aria-label="About and each day of the week. Drag or swipe to explore."
         tabIndex="0"
         onScroll={settleScroll}
         onPointerDown={onPointerDown}
